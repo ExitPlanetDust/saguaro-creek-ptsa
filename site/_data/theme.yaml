@@ -13,7 +13,7 @@
 # in site/assets/css/style.css. Themes not in `calendar` (e.g. spring-fling,
 # trunk-or-treat) only appear when forced via `active` — they never turn on
 # by themselves.
-active: halloween
+active: auto
 
 # Recurring yearly date ranges, MM-DD, inclusive. Ranges may wrap the year end
 # (e.g. winter: 12-01 → 01-05). First match wins; any uncovered date gets the
