@@ -1,0 +1,11 @@
+# Executive officers (manual fallback — the officers Google Sheet wins if connected).
+items:
+  - name: President Saguaro Creek
+    title: President
+    email: saguarocreekptsapresident@gmail.com
+  - name: Treasurer Saguaro Creek
+    title: Treasurer
+    email: saguarocreekptsatreasurer@gmail.com
+  - name: Secretary Saguaro Creek
+    title: Secretary
+    email: saguarocreekptsasecretary@gmail.com

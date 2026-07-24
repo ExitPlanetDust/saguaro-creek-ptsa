@@ -1,0 +1,32 @@
+---
+layout: base.njk
+title: Executive Officers
+permalink: /officers/
+---
+<div class="page-banner">
+  <h1>Executive Officers</h1>
+  <p>Our Officers for {{ site.schoolYear }}</p>
+</div>
+
+<section class="section">
+  {% set officers = fetched.officers | preferItems(manual.officers) %}
+  <table class="officer-table">
+    <thead>
+      <tr><th>Name</th><th>Title</th><th>Email Address</th></tr>
+    </thead>
+    <tbody>
+      {% for o in officers %}
+      <tr>
+        <td>{{ o.name }}</td>
+        <td>{{ o.title }}</td>
+        <td><a href="mailto:{{ o.email }}">{{ o.email }}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p>
+    Interested in getting involved? Email us at
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a> or come to a
+    <a href="/calendar/">PTSA meeting</a>!
+  </p>
+</section>

@@ -1,0 +1,16 @@
+# Community sponsors (manual fallback — the sponsors Google Sheet wins if connected).
+# tier must match a tier name in site/_data/tiers.yaml (Titanium, Diamond,
+# Platinum, Gold, Silver, Bronze).
+items:
+  - name: Cold Stone Creamery
+    tier: Diamond
+    locatedIn: Houghton Town Center
+    address: 9210 S Houghton Rd Ste 140, Tucson, AZ 85747
+    phone: (520) 849-5902
+    website: https://www.coldstonecreamery.com
+  - name: PostNet
+    tier: Platinum
+    locatedIn: Houghton Town Center
+    address: 8110 S Houghton Rd Ste 158, Tucson, AZ 85747
+    phone: (520) 574-7875
+    website: https://locations.postnet.com/az/tucson/8110-s-houghton-rd

@@ -1,0 +1,62 @@
+# Sidewinder Strong sponsorship tiers, shown on the "Sponsor the PTSA" page.
+items:
+  - name: Titanium
+    price: "$2,500"
+    label: Sidewinder Champion
+    tagline: Leading the pack with powerful support that leaves a lasting mark.
+    benefits:
+      - Business logo printed on the back of the school spirit shirt, distributed to all students and staff of Saguaro Creek K-8
+      - Recognition on all major PTSA event flyers, banners, and newsletters throughout the school year
+      - Featured placement on the Saguaro Creek PTSA website with a clickable link to your business
+      - Social media shout-outs on our official Facebook page (minimum 3 times/year)
+      - Donation receipt for tax purposes (501(c)(3) nonprofit)
+  - name: Diamond
+    price: "$1,000"
+    label: Sidewinder Champion
+    tagline: Leading the pack with powerful support that leaves a lasting mark.
+    benefits:
+      - Business logo printed on the back of the school spirit shirt, distributed to all students and staff of Saguaro Creek K-8
+      - Recognition on all major PTSA event flyers, banners, and newsletters throughout the school year
+      - Featured placement on the Saguaro Creek PTSA website with a clickable link to your business
+      - Social media shout-outs on our official Facebook page (minimum 3 times/year)
+      - Donation receipt for tax purposes (501(c)(3) nonprofit)
+  - name: Platinum
+    price: "$500"
+    label: Coiled Champion
+    tagline: Ready to spring into action, helping our school strike success.
+    benefits:
+      - Business logo printed on the back of the school spirit shirt, distributed to all students and staff of Saguaro Creek K-8
+      - Recognition on 3 major PTSA event flyers, banners, and newsletters throughout the school year
+      - Featured placement on the Saguaro Creek PTSA website with a clickable link to your business
+      - Social media shout-out on our official Facebook page
+      - Donation receipt for tax purposes (501(c)(3) nonprofit)
+  - name: Gold
+    price: "$250"
+    label: Desert Tracker
+    tagline: Focused and fast-moving, guiding our momentum forward.
+    benefits:
+      - Business logo printed on the back of the school spirit shirt, distributed to all students and staff of Saguaro Creek K-8
+      - Recognition on major PTSA event flyers, banners, or newsletter
+      - Featured placement on the Saguaro Creek PTSA website with a clickable link to your business
+      - Social media shout-out on our official Facebook page
+      - Donation receipt for tax purposes (501(c)(3) nonprofit)
+  - name: Silver
+    price: "$100"
+    label: Sidewinder Supporter
+    tagline: A steady supporter helping our community rise together.
+    benefits:
+      - Business logo printed on the back of the school spirit shirt, distributed to all students and staff of Saguaro Creek K-8
+      - Recognition on major PTSA event flyers, banners, or newsletter
+      - Featured placement on the Saguaro Creek PTSA website with a clickable link to your business
+      - Social media shout-out on our official Facebook page
+      - Donation receipt for tax purposes (501(c)(3) nonprofit)
+  - name: Bronze
+    price: "$50"
+    label: Desert Advocate
+    tagline: Proudly standing with our students and school spirit.
+    benefits:
+      - Business logo printed on the back of the school spirit shirt, distributed to all students and staff of Saguaro Creek K-8
+      - Recognition on major PTSA event flyer or newsletter
+      - Featured placement on the Saguaro Creek PTSA website with a clickable link to your business
+      - Social media shout-out on our official Facebook page
+      - Donation receipt for tax purposes (501(c)(3) nonprofit)

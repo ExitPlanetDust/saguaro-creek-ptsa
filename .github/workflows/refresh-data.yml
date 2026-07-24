@@ -1,0 +1,56 @@
+# Refreshes site data from Google every night and republishes if anything
+# changed: events from the public Google Calendar, plus events/officers/
+# sponsors/minutes from published Google Sheets (whichever URLs are configured
+# as repository variables — Settings → Secrets and variables → Actions →
+# Variables).
+#
+# 11:17 UTC = 4:17 am in Arizona (no DST). Also runnable by hand from the
+# Actions tab after editing the calendar or a sheet.
+name: Refresh data from Google
+
+on:
+  schedule:
+    - cron: "17 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Fetch Google Calendar events
+        env:
+          GCAL_ICS_URL: ${{ vars.GCAL_ICS_URL }}
+        run: node scripts/fetch-calendar.mjs
+      - name: Fetch Google Sheets data
+        env:
+          SHEET_EVENTS_CSV_URL: ${{ vars.SHEET_EVENTS_CSV_URL }}
+          SHEET_OFFICERS_CSV_URL: ${{ vars.SHEET_OFFICERS_CSV_URL }}
+          SHEET_SPONSORS_CSV_URL: ${{ vars.SHEET_SPONSORS_CSV_URL }}
+          SHEET_MINUTES_CSV_URL: ${{ vars.SHEET_MINUTES_CSV_URL }}
+        run: node scripts/fetch-sheets.mjs
+      - name: Commit changes and trigger deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then
+            echo "No data changes — nothing to deploy."
+            exit 0
+          fi
+          git config user.name "ptsa-site-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/_data/fetched
+          git commit -m "chore: refresh data from Google Calendar/Sheets"
+          git push
+          # Pushes made with the workflow token don't trigger other workflows,
+          # so kick off the deploy explicitly.
+          gh workflow run deploy.yml

@@ -1,0 +1,45 @@
+# Events list (manual fallback).
+# If the PTSA events Google Sheet is connected, that sheet takes over and this
+# file is ignored. Dates use YYYY-MM-DD. Past events disappear automatically.
+items:
+  - title: Meet the Teacher – PTSA Membership Table
+    date: 2026-07-16
+    time: 4:00–6:30 pm
+    location: Saguaro Creek K-8 | Union
+  - title: First Day of School – Tears and Cheers for Kinder
+    date: 2026-07-20
+    time: 7:40–8:30 am
+    location: Saguaro Creek K-8 | Outside Kinder Gate
+  - title: Welcome Back Pizza Night (Back to School Restaurant Night)
+    date: 2026-07-31
+    time: 5:00–8:00 pm
+    location: Peter Piper Pizza | 9545 E Old Spanish Trail, Tucson, AZ 85748
+    details: >-
+      Games, contests, raffle drawings, prizes and PIZZA! Saguaro Creek K-8
+      takes home 15% of all food, beverage, and game credit sales. The class
+      with the highest attendance wins a pizza party!
+  - title: PTSA Member Meeting
+    date: 2026-08-06
+    time: 3:15–4:00 pm
+    location: Saguaro Creek K-8 | Union
+  - title: School Spirit Shirt Day
+    date: 2026-08-07
+    time: 7:50–8:15 am
+    location: Saguaro Creek K-8 | Outside SnakeDen
+  - title: School Spirit Shirt Day
+    date: 2026-09-04
+    time: 7:50–8:15 am
+    location: Saguaro Creek K-8 | Outside SnakeDen
+  - title: Scholastic Book Fair
+    date: 2026-09-14
+    endDate: 2026-09-18
+    time: Times TBD
+    location: Saguaro Creek K-8 | Union
+  - title: School Spirit Shirt Day
+    date: 2026-10-02
+    time: 7:50–8:15 am
+    location: Saguaro Creek K-8 | Outside SnakeDen
+  - title: Trunk-or-Treat
+    date: 2026-10-23
+    time: 5:30–7:00 pm
+    location: Saguaro Creek K-8 | Parent Pick Up

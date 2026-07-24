@@ -1,0 +1,60 @@
+---
+layout: base.njk
+title: Sponsor the PTSA
+permalink: /sponsor-us/
+---
+<div class="page-banner">
+  <h1>Sponsor the PTSA!</h1>
+  <p>🌵 It Takes a Village to Raise a Sidewinder 🌵</p>
+</div>
+
+<section class="section">
+  <h2>Join Us!</h2>
+  <p>
+    Local businesses, families, and community partners are invited to become Sidewinder Strong
+    Sponsors. Your support helps fund student enrichment, family events, staff appreciation, and
+    other programs that strengthen the Saguaro Creek community.
+  </p>
+  <p>
+    Choose the sponsorship level that best fits your goals and receive recognition through spirit
+    shirts, PTSA communications, our website, events and social media!
+  </p>
+  <div class="button-row">
+    <a class="btn btn-big" href="{{ site.store }}">Click here to sponsor the PTSA! →</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>How to Become a Sponsor</h2>
+  <ol class="steps">
+    <li>Visit the <a href="{{ site.store }}">Store</a> and select <strong>Sponsors</strong>.</li>
+    <li>Choose and purchase your preferred sponsorship level.</li>
+    <li>Send an email with your logo to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</li>
+  </ol>
+</section>
+
+<section class="section">
+  <h2>Sidewinder Strong Sponsorship Tiers</h2>
+  {% for t in tiers.items %}
+  <article class="tier-card tier-{{ t.name | lower }}">
+    <header class="tier-head">
+      <span class="tier-badge">{{ t.name }}</span>
+      <h3>{{ t.price }} — {{ t.label }}</h3>
+    </header>
+    <p class="tier-tagline">{{ t.tagline }}</p>
+    <p class="tier-sub">Sponsors at this level will receive:</p>
+    <ul>
+      {% for b in t.benefits %}<li>{{ b }}</li>{% endfor %}
+    </ul>
+    <p><a class="btn" href="{{ site.store }}">Sponsor at {{ t.name }} level</a></p>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="section">
+  <h2>🌵 Want to support the Sidewinders in your own way?</h2>
+  <p>
+    We offer flexible sponsorship opportunities and would love to work with you.
+    Contact us at <a href="mailto:{{ site.email }}">{{ site.email }}</a> to learn more!
+  </p>
+</section>

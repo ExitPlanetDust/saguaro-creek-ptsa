@@ -1,0 +1,32 @@
+---
+layout: base.njk
+title: Meeting Agendas & Minutes
+permalink: /minutes/
+---
+<div class="page-banner">
+  <h1>Meeting Agendas &amp; Minutes</h1>
+  <p>Saguaro Creek K-8 PTSA</p>
+</div>
+
+<section class="section">
+  {% set minutes = fetched.minutes | preferItems(manual.minutes) %}
+  {% if minutes.length %}
+  <ul class="minutes-list">
+    {% for m in minutes | sort(true, false, "date") %}
+    <li class="minutes-row">
+      <span class="minutes-date">{{ m.date | readableDate }}</span>
+      <span class="minutes-title">{{ m.title }}</span>
+      <a class="btn btn-small" href="{{ m.link }}">Open document ↗</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No meeting documents posted yet.</p>
+  {% endif %}
+  <p>
+    All meeting documents live in the
+    <a href="{{ site.minutesFolder }}">PTSA meeting documents folder on Google Drive</a>.
+    If a link asks for access, the folder’s sharing may be restricted — email
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a> to request it.
+  </p>
+</section>

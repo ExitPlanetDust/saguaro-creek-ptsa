@@ -1,0 +1,100 @@
+# Pages CMS configuration (https://pagescms.org).
+# Gives volunteers a friendly web editor for the site's content:
+# sign in at https://app.pagescms.org with a GitHub account that has write
+# access to this repository, and these forms appear.
+media:
+  input: site/assets/img/uploads
+  output: /assets/img/uploads
+
+content:
+  - name: events
+    label: "Events (manual list)"
+    description: >
+      Only used when the events Google Sheet is not connected. Past events
+      disappear from the site automatically.
+    type: file
+    path: site/_data/manual/events.yaml
+    fields:
+      - name: items
+        label: Events
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Event name, type: string, required: true }
+          - { name: date, label: Date, type: date, required: true }
+          - { name: endDate, label: End date (only for multi-day events), type: date }
+          - { name: time, label: "Time (e.g. 5:00–8:00 pm)", type: string }
+          - { name: location, label: Location, type: string }
+          - { name: details, label: Details, type: text }
+          - { name: link, label: "Link (flyer, signup, etc.)", type: string }
+          - { name: image, label: Flyer image (optional), type: image }
+
+  - name: minutes
+    label: "Meeting agendas & minutes"
+    type: file
+    path: site/_data/manual/minutes.yaml
+    fields:
+      - name: items
+        label: Meeting documents
+        type: object
+        list: true
+        fields:
+          - { name: date, label: Meeting date, type: date, required: true }
+          - { name: title, label: Title, type: string }
+          - { name: link, label: Link to document (Google Drive/Docs), type: string, required: true }
+
+  - name: officers
+    label: "Executive officers"
+    type: file
+    path: site/_data/manual/officers.yaml
+    fields:
+      - name: items
+        label: Officers
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string, required: true }
+          - { name: title, label: Role (President, Treasurer, ...), type: string, required: true }
+          - { name: email, label: Email, type: string }
+
+  - name: sponsors
+    label: "Community sponsors"
+    type: file
+    path: site/_data/manual/sponsors.yaml
+    fields:
+      - name: items
+        label: Sponsors
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Business name, type: string, required: true }
+          - name: tier
+            label: Sponsorship tier
+            type: select
+            options:
+              values: [Titanium, Diamond, Platinum, Gold, Silver, Bronze]
+          - { name: locatedIn, label: "Located in (shopping center/area)", type: string }
+          - { name: address, label: Address, type: string }
+          - { name: phone, label: Phone, type: string }
+          - { name: website, label: Website (https://...), type: string }
+          - { name: logo, label: Logo image, type: image }
+
+  - name: settings
+    label: "Site settings"
+    description: School year, contact email, links — used across the whole site.
+    type: file
+    path: site/_data/site.yaml
+    fields:
+      - { name: name, label: Organization name, type: string }
+      - { name: school, label: School name, type: string }
+      - { name: tagline, label: Tagline, type: string }
+      - { name: schoolYear, label: "School year (e.g. 2026–2027)", type: string }
+      - { name: motto, label: Motto, type: string }
+      - { name: email, label: Contact email, type: string }
+      - { name: facebook, label: Facebook page URL, type: string }
+      - { name: store, label: Givebacks store URL, type: string }
+      - { name: givebacks, label: Givebacks site URL, type: string }
+      - { name: districtPage, label: District PTA page URL, type: string }
+      - { name: membershipPrice, label: Membership price, type: string }
+      - { name: minutesFolder, label: Google Drive folder for meeting documents, type: string }
+      - { name: mission, label: Mission statement, type: text }

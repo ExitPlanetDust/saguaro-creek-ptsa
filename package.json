@@ -1,0 +1,18 @@
+{
+  "name": "saguaro-creek-ptsa-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Saguaro Creek K-8 PTSA website — static site built with Eleventy, deployed to GitHub Pages",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "fetch:calendar": "node scripts/fetch-calendar.mjs",
+    "fetch:sheets": "node scripts/fetch-sheets.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "js-yaml": "^4.1.0",
+    "node-ical": "^0.20.1"
+  }
+}
