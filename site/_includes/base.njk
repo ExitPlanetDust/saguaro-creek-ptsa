@@ -8,7 +8,7 @@
   <link rel="icon" href="/assets/img/logo.jpg">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body>
+<body{% if activeTheme.name != "default" %} class="theme-{{ activeTheme.name }}"{% endif %}>
   <header class="topbar">
     <a class="brand" href="/">
       <img src="/assets/img/logo.jpg" alt="Saguaro Creek Sidewinders logo" class="brand-logo">
@@ -27,6 +27,9 @@
     <a href="/minutes/">Agendas &amp; Minutes</a>
     <a href="{{ site.store }}" class="nav-store">Store ↗</a>
   </nav>
+  {% if activeTheme.banner %}
+  <div class="theme-banner">{{ activeTheme.banner }}</div>
+  {% endif %}
   <main class="page">
     {{ content | safe }}
   </main>

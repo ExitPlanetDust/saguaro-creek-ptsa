@@ -272,3 +272,79 @@ h1, h2, h3 { color: var(--green-dark); line-height: 1.25; }
   .minutes-date { flex-basis: 100%; }
   .brand-text small { display: none; }
 }
+
+/* ------------------------------------------------------------------ */
+/* Seasonal themes.                                                    */
+/* The active theme is a class on <body> (set from site/_data/theme.yaml
+   at build time). Each theme only re-tints the shared palette variables
+   above — layout, text, and images never change, so a theme can't break
+   the site. Keep --ink/--paper close to the defaults for readability.  */
+
+.theme-banner {
+  background: var(--cream);
+  color: var(--green-dark);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+}
+
+/* 🎒 Back to School — chalkboard green, apple red, manila paper */
+.theme-back-to-school {
+  --green: #2f6136;
+  --green-dark: #24492a;
+  --brown: #a63a2b;
+  --copper: #c77f2a;
+  --cream: #fdf4dd;
+  --line: #e6d9b8;
+}
+
+/* 🎃 Halloween — twilight purple, charcoal, pumpkin */
+.theme-halloween {
+  --green: #4b2e63;
+  --green-dark: #37224a;
+  --brown: #33303a;
+  --copper: #c05f21;
+  --cream: #f8efe0;
+  --line: #e0d3bd;
+}
+
+/* 🍂 Thanksgiving — harvest browns and amber */
+.theme-thanksgiving {
+  --green: #7a4419;
+  --green-dark: #5c3312;
+  --brown: #8a5520;
+  --copper: #c2601c;
+  --cream: #f9efdf;
+  --line: #e6d5b8;
+}
+
+/* ❄️ Winter / Holidays — pine blue and ice */
+.theme-winter {
+  --green: #1f4e66;
+  --green-dark: #173b4e;
+  --brown: #446b83;
+  --copper: #35708f;
+  --cream: #edf4f9;
+  --line: #d2e0ea;
+}
+
+/* 🌸 Spring Fling (manual only) — garden green and blossom */
+.theme-spring-fling {
+  --green: #397a45;
+  --green-dark: #2b5c34;
+  --brown: #a34d74;
+  --copper: #d07a2f;
+  --cream: #f4f9ec;
+  --line: #dbe6c8;
+}
+
+/* 🚗🍬 Trunk-or-Treat (manual only) — night black, candy purple, pumpkin */
+.theme-trunk-or-treat {
+  --green: #251d31;
+  --green-dark: #191423;
+  --brown: #5e3d99;
+  --copper: #d96e1a;
+  --cream: #fdeed6;
+  --line: #e8d3b0;
+}

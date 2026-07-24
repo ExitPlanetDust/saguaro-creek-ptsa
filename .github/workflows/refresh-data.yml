@@ -50,14 +50,17 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           if git diff --quiet; then
-            echo "No data changes — nothing to deploy."
-            exit 0
+            echo "No data changes to commit."
+          else
+            git config user.name "ptsa-site-bot"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add site/_data/fetched
+            git commit -m "chore: refresh data from Google Calendar/Sheets"
+            git push
           fi
-          git config user.name "ptsa-site-bot"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add site/_data/fetched
-          git commit -m "chore: refresh data from Google Calendar/Sheets"
-          git push
-          # Pushes made with the workflow token don't trigger other workflows,
-          # so kick off the deploy explicitly.
+          # Always rebuild nightly — even with no data changes — so date-driven
+          # things update on schedule: past events drop off and seasonal themes
+          # (site/_data/theme.yaml) switch on the right day. Pushes made with
+          # the workflow token don't trigger other workflows, so kick off the
+          # deploy explicitly.
           gh workflow run deploy.yml

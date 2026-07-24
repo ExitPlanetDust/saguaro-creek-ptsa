@@ -1,0 +1,47 @@
+# Seasonal theme control.
+#
+# active: auto  → the theme is picked from `calendar` below by today's date
+#                 (America/Phoenix). The site rebuilds every night, so themes
+#                 switch themselves on the right day.
+# active: <name> → force that theme on the live site (e.g. for Trunk-or-Treat
+#                 week, or to pin `default` and turn seasonal themes off).
+#
+# To preview a theme locally without editing this file:
+#   THEME=halloween npm run serve
+#
+# Every theme listed under `themes` must have a matching `.theme-<name>` block
+# in site/assets/css/style.css. Themes not in `calendar` (e.g. spring-fling,
+# trunk-or-treat) only appear when forced via `active` — they never turn on
+# by themselves.
+active: auto
+
+# Recurring yearly date ranges, MM-DD, inclusive. Ranges may wrap the year end
+# (e.g. winter: 12-01 → 01-05). First match wins; any uncovered date gets the
+# default Sidewinder desert theme.
+calendar:
+  - { theme: back-to-school, from: "07-10", to: "08-15" }
+  - { theme: halloween,      from: "10-01", to: "10-31" }
+  - { theme: thanksgiving,   from: "11-01", to: "11-30" }
+  - { theme: winter,         from: "12-01", to: "01-05" }
+
+themes:
+  default:
+    label: Sidewinder desert (default)
+  back-to-school:
+    label: Back to School
+    banner: "🎒✏️ Welcome back, Sidewinders! A new school year is here."
+  halloween:
+    label: Halloween
+    banner: "🎃 Happy Halloween from the Saguaro Creek PTSA!"
+  thanksgiving:
+    label: Thanksgiving
+    banner: "🍂 Happy Thanksgiving — we're grateful for our Sidewinder families!"
+  winter:
+    label: Winter / Holidays
+    banner: "❄️ Happy holidays from the Saguaro Creek PTSA!"
+  spring-fling:
+    label: Spring Fling (manual only)
+    banner: "🌸 Spring Fling season — watch the calendar for details!"
+  trunk-or-treat:
+    label: Trunk-or-Treat (manual only)
+    banner: "🚗🍬 Trunk-or-Treat is coming — check the calendar for date & time!"

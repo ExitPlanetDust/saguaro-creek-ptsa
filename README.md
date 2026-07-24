@@ -37,6 +37,7 @@ the git history and can be undone.
 | Sponsors | Sponsors Sheet, else `site/_data/manual/sponsors.yaml` |
 | Sponsorship tiers & prices | `site/_data/tiers.yaml` |
 | School year, emails, links, motto | `site/_data/site.yaml` |
+| Seasonal theme (auto by date, or forced) | `site/_data/theme.yaml` + `.theme-*` blocks in `style.css` |
 | Page text | `site/*.njk` |
 | Look & feel | `site/assets/css/style.css` |
 
@@ -68,6 +69,16 @@ disappear automatically.
 6. **Fix the Drive folder sharing.** The meeting-documents folder currently
    requires per-person access; set it to "Anyone with the link → Viewer" if
    minutes are meant to be public.
+
+## Maintaining with Claude Code
+
+The repo ships with skills in `.claude/skills/` that teach
+[Claude Code](https://claude.com/claude-code) this site's routine chores —
+adding events, sponsors, officers, and minutes; changing site settings and
+images; previewing; publishing; and adding pages. Run `claude` from this
+directory and ask in plain English (e.g. "add the book fair to the calendar,
+Sept 14–18"), or invoke a skill directly with `/add-event`, `/publish-site`,
+etc.
 
 ## Local development
 
