@@ -5,7 +5,7 @@
 // To publish a sheet tab as CSV: Google Sheets → File → Share → Publish to
 // web → pick the tab → "Comma-separated values (.csv)" → copy the URL.
 // Set the URLs as GitHub Actions repository variables:
-//   SHEET_EVENTS_CSV_URL    columns: Title, Date, End Date, Time, Location, Details, Link
+//   SHEET_EVENTS_CSV_URL    columns: Title, Date, End Date, Time, Location, Details, Link, Image
 //   SHEET_OFFICERS_CSV_URL  columns: Name, Title, Email
 //   SHEET_SPONSORS_CSV_URL  columns: Name, Tier, Located In, Address, Phone, Website, Logo
 //   SHEET_MINUTES_CSV_URL   columns: Date, Title, Link
@@ -47,6 +47,9 @@ const KEY_MAP = {
   "phone": "phone",
   "website": "website",
   "logo": "logo",
+  "image": "image",
+  "flyer": "image",
+  "flyer image": "image",
 };
 
 // Sheets' "Title" column means different things per sheet; officers use it as
@@ -76,14 +79,28 @@ function parseCSV(text) {
   return rows;
 }
 
+// Volunteers paste normal Google Drive share links for images; convert them
+// to direct-image URLs so browsers can display them. The file must be shared
+// as "Anyone with the link → Viewer".
+function driveImageUrl(url) {
+  const m =
+    url.match(/drive\.google\.com\/file\/d\/([-\w]+)/) ||
+    url.match(/drive\.google\.com\/(?:open|uc)\?(?:.*&)?id=([-\w]+)/);
+  return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1600` : url;
+}
+
+const IMAGE_KEYS = new Set(["logo", "image"]);
+
 function rowsToItems(rows) {
   if (rows.length < 2) return [];
   const headers = rows[0].map((h) => KEY_MAP[h.trim().toLowerCase()] || null);
   return rows.slice(1).map((r) => {
     const item = {};
     headers.forEach((key, i) => {
-      const val = (r[i] || "").trim();
-      if (key && val) item[key] = val;
+      let val = (r[i] || "").trim();
+      if (!key || !val) return;
+      if (IMAGE_KEYS.has(key)) val = driveImageUrl(val);
+      item[key] = val;
     });
     return item;
   }).filter((item) => Object.keys(item).length > 0);

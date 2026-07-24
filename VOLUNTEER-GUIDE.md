@@ -22,6 +22,10 @@ data from Google* → Run workflow).
 Formatting tips:
 - Dates must look like `2026-10-23` (year-month-day).
 - Don't rename or reorder the header row of the spreadsheet tabs.
+- **Pictures (flyers, sponsor logos):** upload the image to Google Drive,
+  set sharing to "Anyone with the link → Viewer", and paste the share link
+  into the `Image`/`Logo` column — the website converts it automatically.
+  More image tricks are in `AUTOMATION-GUIDE.md`.
 
 ## Option 2: Pages CMS (friendly web editor)
 

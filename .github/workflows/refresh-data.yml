@@ -22,6 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # GitHub silently disables scheduled workflows after 60 days without
+      # repo activity (e.g. over summer break). Re-enabling ourselves on every
+      # run resets that timer, so the nightly sync never stops on its own.
+      - name: Keep schedule alive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/refresh-data.yml/enable" || true
       - uses: actions/setup-node@v4
         with:
           node-version: 22

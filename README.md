@@ -5,6 +5,9 @@ built to replace the hand-maintained Givebacks site with something that is
 **free to host, easy to update, and largely updates itself**.
 
 - **Live site:** GitHub Pages (see the repo's *Settings → Pages* for the URL)
+- **Guides:** [`AUTOMATION-GUIDE.md`](AUTOMATION-GUIDE.md) — the
+  least-maintenance setup, what runs itself, and how to change images;
+  [`VOLUNTEER-GUIDE.md`](VOLUNTEER-GUIDE.md) — for content editors
 - **Membership, store & payments:** stay on
   [Givebacks](https://saguarocreekptsa.givebacks.com/) — this site links to it.
   Givebacks handles money; this site handles information.
