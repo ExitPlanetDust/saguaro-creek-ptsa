@@ -13,11 +13,11 @@ districtPage: https://scs.vailschooldistrict.org/page/pta
 membershipPrice: "$10"
 # Membership goal bar on the home page. Update membershipCount now and then
 # (the Givebacks dashboard has the number); the bar is hidden while it is 0.
-membershipCount: 0
+membershipCount: 78
 membershipGoal: 100
 # Volunteer signup: paste a Google Form URL here to use it; while empty, the
 # volunteer page falls back to an email link.
-volunteerForm: ""
+volunteerForm: "https://docs.google.com/forms/d/e/1FAIpQLSeHQhQzjOygf1PqGAkqqsKCuyrTCBn6c6vTIivfZqK9tSDWCg/viewform"
 # GoatCounter analytics code (the "xyz" in xyz.goatcounter.com). Leave empty
 # to disable analytics entirely.
 goatcounter: ""
