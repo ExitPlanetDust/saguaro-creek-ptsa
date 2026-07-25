@@ -77,6 +77,21 @@ export default function (eleventyConfig) {
     ),
   );
 
+  // "Add to Google Calendar" link for an all-day event (end date is exclusive).
+  eleventyConfig.addFilter("gcalLink", (e) => {
+    const compact = (day) => toDayString(day).replaceAll("-", "");
+    const end = parseLocalDate(e.endDate || e.date);
+    end.setDate(end.getDate() + 1);
+    const params = new URLSearchParams({
+      action: "TEMPLATE",
+      text: e.title,
+      dates: `${compact(e.date)}/${compact(end.toISOString())}`,
+      details: [e.time, e.details].filter(Boolean).join(" — "),
+      location: e.location || "",
+    });
+    return `https://calendar.google.com/calendar/render?${params}`;
+  });
+
   eleventyConfig.addShortcode("year", () => String(new Date().getFullYear()));
 
   return {

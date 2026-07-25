@@ -1,0 +1,51 @@
+---
+layout: base.njk
+title: About the PTSA
+permalink: /about/
+---
+<img class="hero" src="/assets/img/hero-banner.png"
+     alt="Saguaro Creek PTSA — K-8 School in the Vail School District in Arizona. Home of the Sidewinders!">
+
+<section class="section">
+  <h1>About the Saguaro Creek PTSA</h1>
+  <p>
+    We're the Parent Teacher Student Association for {{ site.school }} in the
+    Vail School District, Arizona — a 501(c)(3) nonprofit run entirely by
+    volunteers. Our mission: {{ site.mission }}
+  </p>
+  <p class="callout">“{{ site.motto }}”</p>
+</section>
+
+<section class="section">
+  <h2>Executive officers · {{ site.schoolYear }}</h2>
+  {% set officers = fetched.officers | preferItems(manual.officers) %}
+  <table class="officer-table">
+    <thead>
+      <tr><th>Name</th><th>Title</th><th>Email Address</th></tr>
+    </thead>
+    <tbody>
+      {% for o in officers %}
+      <tr>
+        <td>{{ o.name }}</td>
+        <td>{{ o.title }}</td>
+        <td><a href="mailto:{{ o.email }}">{{ o.email }}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <h2>How we run</h2>
+  <p>
+    We meet during the school year — every family is welcome, and members vote.
+    Meeting agendas and minutes are public:
+    <a href="/minutes/">read them here</a>. Membership and all payments are
+    handled securely on <a href="{{ site.givebacks }}">Givebacks</a>; this site
+    never touches money.
+  </p>
+  <div class="button-row">
+    <a class="btn" href="{{ site.store }}">Join the PTSA — {{ site.membershipPrice }}/year</a>
+    <a class="btn btn-outline" href="/minutes/">Agendas &amp; minutes</a>
+  </div>
+</section>

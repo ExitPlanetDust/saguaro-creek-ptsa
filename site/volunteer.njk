@@ -1,0 +1,45 @@
+---
+layout: base.njk
+title: Volunteer
+permalink: /volunteer/
+---
+<div class="page-banner">
+  <h1>Volunteer</h1>
+  <p>Every hour you give shows up in a Sidewinder's day.</p>
+</div>
+
+{% set signupLink = site.volunteerForm or ("mailto:" + site.email + "?subject=I%20want%20to%20volunteer%20with%20the%20PTSA") %}
+
+<section class="section section-cta">
+  <h2>Raise your hand — it takes 2 minutes</h2>
+  <p>
+    Tell us what you're interested in and how much time you have. No commitment
+    yet — we'll match you with something that fits and reach out before each event.
+  </p>
+  <div class="button-row">
+    <a class="btn btn-big" href="{{ signupLink }}">I'm interested in volunteering</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Ways to help — with or without showing up</h2>
+  <ul class="feature-list">
+    <li><strong>Event day help.</strong> Run a booth, check families in, or set up and tear down — usually one or two hours.</li>
+    <li><strong>Behind the scenes.</strong> Cut paper, prep materials, count box tops — from home, on your own schedule.</li>
+    <li><strong>Planning committees.</strong> Help shape the book fair, restaurant nights, and family events.</li>
+    <li><strong>Share a skill.</strong> Design a flyer, take photos, translate, or bring whatever you're great at.</li>
+  </ul>
+  <p>
+    The best way to hear about upcoming opportunities is a
+    <a href="/calendar/">PTSA meeting</a> — but you never need to attend meetings
+    to help. Some of the most important work happens behind the scenes. 💚
+  </p>
+</section>
+
+<section class="section">
+  <h2>Questions first?</h2>
+  <p>
+    Email us at <a href="mailto:{{ site.email }}">{{ site.email }}</a> or say hi
+    at any <a href="/calendar/">event</a> — we'd love to meet you.
+  </p>
+</section>

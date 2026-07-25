@@ -9,15 +9,15 @@ description: Change site-wide PTSA website settings — school year, motto, miss
 
 One file drives every page that mentions these (edit here, never hard-code in templates):
 
-`name`, `school`, `tagline`, `schoolYear`, `motto`, `email`, `facebook`, `store` (Givebacks shop), `givebacks`, `districtPage`, `membershipPrice`, `minutesFolder`, `mission`.
+`name`, `school`, `tagline`, `schoolYear`, `motto`, `email`, `facebook`, `store` (Givebacks shop), `givebacks`, `districtPage`, `membershipPrice`, `membershipCount`/`membershipGoal` (home-page goal bar; count 0 hides it), `volunteerForm` (signup form URL; blank falls back to email), `goatcounter` (analytics code; blank disables), `minutesFolder`, `mission`.
 
-Typical yearly rollover: bump `schoolYear` (e.g. `2027–2028` — use an en dash) and review `membershipPrice`.
+Typical yearly rollover: bump `schoolYear` (e.g. `2027–2028` — use an en dash), review `membershipPrice`, and reset `membershipCount` to 0. Update `membershipCount` whenever the user mentions a new member total (the number comes from the Givebacks dashboard).
 
 Templates reference these as `{{ site.<key> }}`. Before removing or renaming a key, grep `site/*.njk` and `site/_includes/` for usages.
 
 ## Page wording — `site/*.njk`
 
-Each page is one Nunjucks template: `index.njk` (home), `calendar.njk`, `sponsor-us.njk`, `community-sponsors.njk`, `officers.njk`, `minutes.njk`. The shared header/nav/footer live in `site/_includes/base.njk`. Edit prose in place; keep links to Givebacks going through `{{ site.store }}`/`{{ site.givebacks }}` rather than raw URLs.
+Each page is one Nunjucks template: `index.njk` (home, incl. the hero and next-event card), `calendar.njk`, `volunteer.njk`, `about.njk` (mission + officers + how-we-run), `sponsor-us.njk`, `community-sponsors.njk`, `officers.njk`, `minutes.njk` (the last two are off the nav but their URLs still work). The shared header/nav/footer live in `site/_includes/base.njk`. Edit prose in place; keep links to Givebacks going through `{{ site.store }}`/`{{ site.givebacks }}` rather than raw URLs.
 
 Tone: warm, family-facing, exclamation-friendly ("Sidewinders", "Sidewinder Strong"). Match it.
 

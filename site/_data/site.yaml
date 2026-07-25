@@ -11,6 +11,16 @@ store: https://saguarocreekptsa.givebacks.com/shop
 givebacks: https://saguarocreekptsa.givebacks.com/
 districtPage: https://scs.vailschooldistrict.org/page/pta
 membershipPrice: "$10"
+# Membership goal bar on the home page. Update membershipCount now and then
+# (the Givebacks dashboard has the number); the bar is hidden while it is 0.
+membershipCount: 0
+membershipGoal: 100
+# Volunteer signup: paste a Google Form URL here to use it; while empty, the
+# volunteer page falls back to an email link.
+volunteerForm: ""
+# GoatCounter analytics code (the "xyz" in xyz.goatcounter.com). Leave empty
+# to disable analytics entirely.
+goatcounter: ""
 minutesFolder: https://drive.google.com/drive/folders/10X_LiQMV138FV-oU-3n5HK_HwfPZMlDz
 mission: >-
   To make every child's potential a reality by engaging and empowering

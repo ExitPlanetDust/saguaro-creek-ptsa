@@ -13,10 +13,10 @@ Replacing these means overwriting the file **keeping the exact same filename**, 
 
 | File | Used for |
 |---|---|
-| `hero-banner.png` | Big banner at the top of the home page |
+| `hero-banner.png` | Banner art at the top of the About page (the home hero is HTML, not an image) |
 | `logo.jpg` | Header logo + favicon (`base.njk`) |
-| `why-join-ptsa.png` | "Join the PTSA" graphic on the home page |
 | `join-flyer.jpg` | Join flyer |
+| `why-join-ptsa.png` | No longer referenced (was the home-page graphic) — safe to delete |
 
 If the new file is a different format (e.g. `.jpg` replacing `.png`), instead update every reference — grep `site/` for the old filename.
 

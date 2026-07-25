@@ -96,5 +96,8 @@ content:
       - { name: givebacks, label: Givebacks site URL, type: string }
       - { name: districtPage, label: District PTA page URL, type: string }
       - { name: membershipPrice, label: Membership price, type: string }
+      - { name: membershipCount, label: "Current member count (shows the home-page goal bar; 0 hides it)", type: number }
+      - { name: membershipGoal, label: Membership goal for the year, type: number }
+      - { name: volunteerForm, label: "Volunteer signup form URL (blank = email link)", type: string }
       - { name: minutesFolder, label: Google Drive folder for meeting documents, type: string }
       - { name: mission, label: Mission statement, type: text }

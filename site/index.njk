@@ -3,68 +3,93 @@ layout: base.njk
 title: Home
 permalink: /
 ---
-<img class="hero" src="/assets/img/hero-banner.png"
-     alt="Saguaro Creek PTSA — K-8 School in the Vail School District in Arizona. Home of the Sidewinders!">
+{% set sheetOrManual = fetched.events | preferItems(manual.events) %}
+{% set events = [sheetOrManual, fetched.gcalEvents.items] | upcomingEvents %}
+{% set next = events[0] %}
 
-<section class="section">
-  <h1>Welcome to Saguaro Creek PTSA!</h1>
-  <p>
-    The PTSA plays a vital role in bringing families, staff, and students together to create
-    meaningful change. Our work is guided by a shared mission: to make every child’s potential a
-    reality by engaging and empowering families and communities to advocate for all children.
-    Our motto, “{{ site.motto }}”, reflects our deep commitment to building a connected, inclusive,
-    and empowering school community. Together, we celebrate our Sidewinder spirit and strive to make
-    Saguaro Creek K-8 a place where every student can thrive!
-  </p>
-  <p class="callout">
-    Together, families, students, staff, and community members help create meaningful programs,
-    memorable events, and additional support for our Sidewinders.
+<section class="hero-card">
+  <p class="hero-eyebrow">{{ site.school }} · {{ site.schoolYear }}</p>
+  <h1>Help every Sidewinder thrive.</h1>
+  <p class="hero-sub">
+    We're the parents, teachers, and students behind the field trips, spirit days,
+    book fairs, and teacher appreciation at Saguaro Creek K-8. Join us — it's
+    {{ site.membershipPrice }} a year, and it all goes back to our kids.
   </p>
   <div class="button-row">
-    <a class="btn" href="{{ site.store }}">Join Us</a>
-    <a class="btn" href="/calendar/">Events</a>
-    <a class="btn" href="{{ site.store }}">Shop</a>
+    <a class="btn btn-big" href="{{ site.store }}">Join the PTSA — {{ site.membershipPrice }}/year</a>
+    <a class="btn btn-outline" href="/volunteer/">Volunteer with us</a>
   </div>
+  {% if next %}
+  <a class="hero-next" href="/calendar/">
+    <span class="event-date" aria-hidden="true">
+      <span class="event-mon">{{ next.date | mon }}</span>
+      <span class="event-day">{{ next.date | dayNum }}{% if next.endDate %}–{{ next.endDate | dayNum }}{% endif %}</span>
+    </span>
+    <span class="hero-next-body">
+      <span class="hero-next-label">Next up</span>
+      <strong>{{ next.title }}</strong>
+      <span class="event-meta">{{ next.date | readableDate }}{% if next.time %} · {{ next.time }}{% endif %}</span>
+    </span>
+    <span class="hero-next-more">All events →</span>
+  </a>
+  {% endif %}
 </section>
 
-<section class="section">
-  <h2>Join the PTSA!</h2>
-  <div class="split">
-    <img src="/assets/img/why-join-ptsa.png"
-         alt="Why join the PTSA? Be in the know, build relationships, speak up, and hone your skills. Membership through the Givebacks store."
-         class="split-img">
-    <div>
-      <ul class="feature-list">
-        <li><strong>Be in the know.</strong> Keep up with what is happening at school and how you can support your child’s education.</li>
-        <li><strong>Build relationships.</strong> Connect with other families through meetings, events, and communications.</li>
-        <li><strong>Speak up.</strong> Effectively suggest changes at your child’s school and in your community.</li>
-        <li><strong>Hone your skills.</strong> Expand your skills and talents to benefit children and the school.</li>
-      </ul>
-      <p><a class="btn" href="{{ site.store }}">Become a member — {{ site.membershipPrice }}</a></p>
-      <p class="fine-print">*All membership dues for joining the PTSA are {{ site.membershipPrice }} for individuals, plus processing fees.</p>
+{% if site.membershipCount > 0 %}
+<section class="section section-cta">
+  <div class="goal">
+    <p class="goal-line"><strong>{{ site.membershipCount }} families strong</strong> — help us reach {{ site.membershipGoal }} this year!</p>
+    <div class="goal-bar" role="img" aria-label="{{ site.membershipCount }} of {{ site.membershipGoal }} members">
+      <div class="goal-fill" style="width: {{ (100 * site.membershipCount / site.membershipGoal) | round }}%"></div>
     </div>
   </div>
 </section>
+{% endif %}
 
 <section class="section">
-  <h2>Volunteer!</h2>
+  <h2>What your {{ site.membershipPrice }} does</h2>
   <p>
-    There will be many opportunities to volunteer with the PTSA! We will have planning committees,
-    will need special event volunteers, and more. The best way to find out about these opportunities
-    is to attend our meetings. We do understand that not every member can attend meetings —
-    not every volunteer role is front and center; sometimes the most important work happens behind
-    the scenes. 💚
+    Membership dues and fundraisers pay for real things Sidewinders see all year:
+    classroom and teacher support, family events like restaurant nights and the
+    book fair, spirit gear, and staff appreciation. Our motto —
+    “{{ site.motto }}” — is how we work: families, staff, and students pulling
+    in the same direction.
   </p>
+  <ul class="feature-list">
+    <li><strong>Be in the know.</strong> Hear what's happening at school first, and how to support your child.</li>
+    <li><strong>Build relationships.</strong> Meet other families at meetings and events.</li>
+    <li><strong>Speak up.</strong> Have a real voice in decisions at your child's school.</li>
+    <li><strong>Hone your skills.</strong> Put your talents to work for kids and teachers.</li>
+  </ul>
+  {# Photo slot: when we have event photos (with consent), add a small gallery
+     here — real Sidewinder faces beat any graphic. #}
+  <div class="button-row">
+    <a class="btn" href="{{ site.store }}">Join the PTSA — {{ site.membershipPrice }}/year</a>
+  </div>
+  <p class="fine-print">Dues are {{ site.membershipPrice }} per person, plus processing fees. Joining takes about two minutes on Givebacks.</p>
+</section>
+
+<section class="section section-cta">
+  <h2>No time for meetings? Perfect — volunteer your way.</h2>
+  <p>
+    Cut paper from your couch, run a game booth for an hour, or help plan the next
+    big event. Most of our volunteer work happens behind the scenes, on your
+    schedule. 💚
+  </p>
+  <div class="button-row">
+    <a class="btn" href="/volunteer/">Raise your hand — it takes 2 minutes</a>
+  </div>
 </section>
 
 <section class="section">
-  <h2>Thank You To Our Sponsors!</h2>
+  <h2>Thank you to our sponsors!</h2>
   <p>
-    We are grateful to the local businesses and community partners whose generous support helps
-    strengthen programs, events, and opportunities for our Sidewinders.
+    Local businesses make our programs possible — and our families notice who
+    shows up for their school.
   </p>
   <div class="button-row">
-    <a class="btn" href="/community-sponsors/">Meet our sponsors</a>
+    <a class="btn btn-outline" href="/community-sponsors/">Meet our sponsors</a>
     <a class="btn btn-outline" href="/sponsor-us/">Become a sponsor</a>
   </div>
+  <p class="fine-print">{{ site.name }} is a 501(c)(3) nonprofit — sponsorships and donations are tax-deductible.</p>
 </section>

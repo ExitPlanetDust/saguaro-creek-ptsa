@@ -23,7 +23,7 @@ description: Add a brand-new page to the PTSA website (e.g. a fundraising page, 
 
    Look at an existing simple page (`site/officers.njk` or `site/minutes.njk`) and copy its structure and CSS classes (`section`, `btn`, `button-row`, `split`, `callout`) — don't invent new styling unless asked. Site-wide values are available as `{{ site.<key> }}` from `site/_data/site.yaml`.
 
-2. **Add it to the nav** in `site/_includes/base.njk` (the `<nav class="mainnav">` block), unless the user wants it unlisted (linked from a flyer/QR code only). Nav space is limited — ask before adding a seventh item; linking from the home page may be better.
+2. **Add it to the nav** in `site/_includes/base.njk` (the `<nav class="mainnav">` block), unless the user wants it unlisted (linked from a flyer/QR code only). The nav is deliberately short (Home · Events · Volunteer · Sponsors · About · Join) — prefer linking from an existing page (often About) over adding a nav item, and keep "Join the PTSA" as the only `.nav-join`-styled item.
 
 3. **If the page needs volunteer-editable data** (a list of things that changes over time), don't hard-code it: add a `site/_data/manual/<thing>.yaml` file, loop over it in the template, **and add a matching form to `.pages.yml`** so volunteers can edit it in Pages CMS. Follow the existing patterns in both files.
 

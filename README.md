@@ -36,7 +36,7 @@ the git history and can be undone.
 | Officers | Officers Sheet, else `site/_data/manual/officers.yaml` |
 | Sponsors | Sponsors Sheet, else `site/_data/manual/sponsors.yaml` |
 | Sponsorship tiers & prices | `site/_data/tiers.yaml` |
-| School year, emails, links, motto | `site/_data/site.yaml` |
+| School year, emails, links, motto, member count/goal, volunteer form URL | `site/_data/site.yaml` |
 | Seasonal theme (auto by date, or forced) | `site/_data/theme.yaml` + `.theme-*` blocks in `style.css` |
 | Page text | `site/*.njk` |
 | Look & feel | `site/assets/css/style.css` |

@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Calendar
+title: Events
 permalink: /calendar/
 ---
 <div class="page-banner">
@@ -9,17 +9,12 @@ permalink: /calendar/
 </div>
 
 <section class="section">
-  <h2>🌵 {{ site.schoolYear }} PTSA Calendar 🌵</h2>
-  <p>
-    Stay connected with everything happening at Saguaro Creek! Explore upcoming PTSA events, family
-    activities, school spirit days, fundraisers, and community gatherings throughout the
-    {{ site.schoolYear }} school year. Check back often for updated details, flyers, volunteer
-    opportunities, and important event information.
-  </p>
-</section>
-
-<section class="section">
   <h2>Upcoming Events</h2>
+  <p>
+    Spirit days, restaurant nights, the book fair, PTSA meetings — everything
+    happening at Saguaro Creek, always up to date. Tap “Add to calendar” so you
+    never miss one.
+  </p>
   {% set sheetOrManual = fetched.events | preferItems(manual.events) %}
   {% set events = [sheetOrManual, fetched.gcalEvents.items] | upcomingEvents %}
   {% if events.length %}
@@ -38,17 +33,21 @@ permalink: /calendar/
         </p>
         {% if e.location %}<p class="event-meta">📍 {{ e.location }}</p>{% endif %}
         {% if e.details %}<p>{{ e.details }}</p>{% endif %}
-        {% if e.link %}<p><a href="{{ e.link }}">More info ↗</a></p>{% endif %}
+        <p class="event-actions">
+          <a href="{{ e | gcalLink }}">Add to calendar</a>
+          {% if e.link %} · <a href="{{ e.link }}">More info ↗</a>{% endif %}
+        </p>
         {% if e.image %}<p><img class="event-flyer" src="{{ e.image }}" alt="Flyer for {{ e.title }}"></p>{% endif %}
       </div>
     </li>
     {% endfor %}
   </ul>
   {% else %}
-  <p>No upcoming events posted yet — check back soon!</p>
+  <p>No upcoming events posted yet — check back soon, or follow us on
+    <a href="{{ site.facebook }}">Facebook</a> for the latest.</p>
   {% endif %}
   <p>
-    Follow <a href="{{ site.facebook }}">Saguaro Creek PTSA on Facebook</a> for information about
-    past events!
+    Follow <a href="{{ site.facebook }}">Saguaro Creek PTSA on Facebook</a> for
+    photos and recaps of past events!
   </p>
 </section>

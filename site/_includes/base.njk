@@ -20,12 +20,11 @@
   </header>
   <nav class="mainnav" aria-label="Main navigation">
     <a href="/">Home</a>
-    <a href="/calendar/">Calendar</a>
-    <a href="/sponsor-us/">Sponsor the PTSA!</a>
-    <a href="/community-sponsors/">Community Sponsors</a>
-    <a href="/officers/">Executive Officers</a>
-    <a href="/minutes/">Agendas &amp; Minutes</a>
-    <a href="{{ site.store }}" class="nav-store">Store ↗</a>
+    <a href="/calendar/">Events</a>
+    <a href="/volunteer/">Volunteer</a>
+    <a href="/community-sponsors/">Sponsors</a>
+    <a href="/about/">About</a>
+    <a href="{{ site.store }}" class="nav-join">Join the PTSA ↗</a>
   </nav>
   {% if activeTheme.banner %}
   <div class="theme-banner">{{ activeTheme.banner }}</div>
@@ -47,5 +46,8 @@
     </p>
     <p class="footer-small">© {% year %} {{ site.name }} — a 501(c)(3) nonprofit. Site maintained by PTSA volunteers.</p>
   </footer>
+  {% if site.goatcounter %}
+  <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  {% endif %}
 </body>
 </html>

@@ -1,4 +1,19 @@
 /* Saguaro Creek PTSA — desert Sidewinder theme */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/bricolage-grotesque-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/assets/fonts/bricolage-grotesque-800.woff2") format("woff2");
+}
+
 :root {
   --green: #365949;
   --green-dark: #2b483b;
@@ -8,6 +23,7 @@
   --paper: #fbfaf6;
   --ink: #26302b;
   --line: #ddd6c6;
+  --display: "Bricolage Grotesque", "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -46,7 +62,7 @@ a:hover { color: var(--copper); }
   border: 2px solid #fff;
 }
 .brand-text { display: flex; flex-direction: column; line-height: 1.25; }
-.brand-text strong { font-size: 1.25rem; letter-spacing: 0.02em; }
+.brand-text strong { font-size: 1.25rem; letter-spacing: 0.02em; font-family: var(--display); font-weight: 800; }
 .brand-text small { opacity: 0.9; }
 
 /* Nav */
@@ -69,7 +85,13 @@ a:hover { color: var(--copper); }
   border-bottom: 2px solid transparent;
 }
 .mainnav a:hover { border-bottom-color: #fff; color: #fff; }
-.nav-store { text-decoration: underline; }
+.mainnav .nav-join {
+  background: var(--copper);
+  border-radius: 999px;
+  padding: 0.1rem 0.9rem;
+  border-bottom: none;
+}
+.mainnav .nav-join:hover { background: var(--green); }
 
 /* Layout */
 .page { max-width: 1100px; margin: 0 auto; padding: 1rem 1rem 3rem; }
@@ -80,7 +102,8 @@ a:hover { color: var(--copper); }
   padding: 1.25rem 1.5rem;
   margin: 1.25rem 0;
 }
-h1, h2, h3 { color: var(--green-dark); line-height: 1.25; }
+h1, h2, h3 { color: var(--green-dark); line-height: 1.25; font-family: var(--display); font-weight: 800; }
+h3 { font-weight: 600; }
 .section > h1:first-child, .section > h2:first-child { margin-top: 0.25rem; }
 
 .hero {
@@ -108,6 +131,79 @@ h1, h2, h3 { color: var(--green-dark); line-height: 1.25; }
   letter-spacing: 0.04em;
 }
 .page-banner p { margin: 0; font-size: 1.1rem; }
+
+/* Home hero */
+.hero-card {
+  margin-top: 1rem;
+  background:
+    radial-gradient(1200px 340px at 88% -60%, rgba(184, 115, 71, 0.55), transparent 60%),
+    linear-gradient(160deg, var(--green) 0%, var(--green-dark) 100%);
+  color: var(--cream);
+  border-radius: 10px;
+  padding: 2.5rem 2rem 2rem;
+}
+.hero-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+}
+.hero-card h1 {
+  color: #fff;
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+.hero-sub { margin: 0 0 1.25rem; font-size: 1.1rem; max-width: 46rem; }
+.hero-card .button-row { justify-content: flex-start; margin-bottom: 1.5rem; }
+.hero-card .btn { background: var(--copper); }
+.hero-card .btn:hover { background: #fff; color: var(--green-dark); }
+.hero-card .btn-outline { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.7); }
+.hero-card .btn-outline:hover { border-color: #fff; }
+.hero-next {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+.hero-next:hover { background: #fff; color: var(--ink); }
+.hero-next .event-date { background: var(--copper); }
+.hero-next-body { display: flex; flex-direction: column; line-height: 1.35; }
+.hero-next-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--copper);
+}
+.hero-next-more { margin-left: auto; font-weight: 700; color: var(--green); white-space: nowrap; }
+
+/* Membership goal bar */
+.goal-line { margin: 0 0 0.5rem; text-align: center; }
+.goal-bar {
+  height: 14px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.goal-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green), var(--copper));
+  min-width: 14px;
+}
+
+/* Tinted call-to-action sections */
+.section-cta { background: var(--cream); }
+
+.event-actions a { font-weight: 700; }
 
 .callout {
   font-weight: 700;
@@ -271,6 +367,9 @@ h1, h2, h3 { color: var(--green-dark); line-height: 1.25; }
   .split { grid-template-columns: 1fr; }
   .minutes-date { flex-basis: 100%; }
   .brand-text small { display: none; }
+  .hero-card { padding: 1.75rem 1.25rem 1.25rem; }
+  .hero-next { flex-wrap: wrap; }
+  .hero-next-more { display: none; }
 }
 
 /* ------------------------------------------------------------------ */
