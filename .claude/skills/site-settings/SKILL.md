@@ -27,5 +27,5 @@ All styling is this one plain-CSS file. No build step for CSS — edit and rebui
 
 ## Verify and publish
 
-1. `npm run build` and spot-check the affected pages in `_site/` (or `npm run serve` → http://localhost:8080).
+1. `npm run build` and spot-check the affected pages in `_site/` (or `npm run serve` → http://localhost:8020).
 2. Commit and push to `main` to deploy (see the `publish-site` skill).

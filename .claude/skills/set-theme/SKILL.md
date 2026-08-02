@@ -16,7 +16,7 @@ Valid names are the keys under `themes:` in that file. If the user asks for a th
 ## Previewing (no effect on the live site)
 
 ```bash
-THEME=<name> npm run serve     # http://localhost:8080
+THEME=<name> npm run serve     # http://localhost:8020
 ```
 
 The `THEME` env var overrides everything for that build only. Use this — not an `active:` edit — when the user just wants to *see* a theme; take a screenshot with the browser tools if they want a look without leaving the terminal.

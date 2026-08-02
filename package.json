@@ -6,7 +6,7 @@
   "description": "Saguaro Creek K-8 PTSA website — static site built with Eleventy, deployed to GitHub Pages",
   "scripts": {
     "build": "eleventy",
-    "serve": "eleventy --serve",
+    "serve": "eleventy --serve --port 8020",
     "fetch:calendar": "node scripts/fetch-calendar.mjs",
     "fetch:sheets": "node scripts/fetch-sheets.mjs"
   },

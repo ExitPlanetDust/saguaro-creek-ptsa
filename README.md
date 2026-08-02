@@ -84,8 +84,25 @@ etc.
 
 ```bash
 npm install
-npm run serve        # http://localhost:8080, rebuilds on save
+npm run serve        # http://localhost:8020, rebuilds on save
 npm run build        # writes the site to _site/
 npm run fetch:calendar   # needs GCAL_ICS_URL set
 npm run fetch:sheets     # needs SHEET_*_CSV_URL set
 ```
+
+## Ports
+
+This repo allocates from **8020–8039**. The authoritative list for every project is the cross-repo registry at `~/Documents/Projects/coordinator/PORTS.md`.
+
+| Port | Service |
+|-----:|---------|
+| 8020 | Eleventy dev server |
+
+Before adding anything that listens:
+
+```sh
+~/Documents/Projects/coordinator/bin/ports free saguaro-creek-ptsa
+~/Documents/Projects/coordinator/bin/ports claim saguaro-creek-ptsa "<service>"
+```
+
+Pin whatever you take — `strictPort: true` for Vite, an explicit `--port` for uvicorn — so a busy port fails loudly instead of sliding to the next one and serving from the wrong app.

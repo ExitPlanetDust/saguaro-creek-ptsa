@@ -10,7 +10,7 @@ description: Build or run the PTSA website locally and verify changes before pub
 ```bash
 npm install          # once, or after dependency changes
 npm run build        # writes static HTML to _site/
-npm run serve        # live server at http://localhost:8080, rebuilds on save
+npm run serve        # live server at http://localhost:8020, rebuilds on save
 THEME=halloween npm run serve   # preview a seasonal theme (see set-theme skill)
 ```
 
@@ -29,4 +29,4 @@ Run `npm run serve` in the background so you can keep working; stop it when done
 
 ## Screenshots
 
-If the user wants to *see* the result, use the Chrome browser tools against `http://localhost:8080` while `npm run serve` runs.
+If the user wants to *see* the result, use the Chrome browser tools against `http://localhost:8020` while `npm run serve` runs.
