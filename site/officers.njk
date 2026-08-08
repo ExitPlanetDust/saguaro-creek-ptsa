@@ -19,7 +19,7 @@ permalink: /officers/
       <tr>
         <td>{{ o.name }}</td>
         <td>{{ o.title }}</td>
-        <td><a href="mailto:{{ o.email }}">{{ o.email }}</a></td>
+        <td>{% if o.email %}<a href="mailto:{{ o.email }}">{{ o.email }}</a>{% else %}—{% endif %}</td>
       </tr>
       {% endfor %}
     </tbody>

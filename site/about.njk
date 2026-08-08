@@ -17,6 +17,32 @@ permalink: /about/
 </section>
 
 <section class="section">
+  <h2>Our first year, by the numbers</h2>
+  <p>
+    From our very first year, the Saguaro Creek K–8 PTSA has transformed the
+    support of our families, volunteers, and community partners into meaningful
+    opportunities for students and staff.
+  </p>
+  <ul class="feature-list">
+    <li><strong>103</strong> PTSA members</li>
+    <li><strong>5</strong> successful fundraisers</li>
+    <li><strong>More than $20,000</strong> raised</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Looking ahead to {{ site.schoolYear }}</h2>
+  <p>
+    As we look ahead to the {{ site.schoolYear }} school year, the Saguaro
+    Creek K–8 PTSA is excited to build on the momentum of our first year. By
+    creating more student-centered events, welcoming greater family and
+    volunteer involvement, and continuing to support meaningful school
+    experiences, we hope to make every Sidewinder's journey even more
+    memorable.
+  </p>
+</section>
+
+<section class="section">
   <h2>Executive officers · {{ site.schoolYear }}</h2>
   {% set officers = fetched.officers | preferItems(manual.officers) %}
   <table class="officer-table">
@@ -28,7 +54,7 @@ permalink: /about/
       <tr>
         <td>{{ o.name }}</td>
         <td>{{ o.title }}</td>
-        <td><a href="mailto:{{ o.email }}">{{ o.email }}</a></td>
+        <td>{% if o.email %}<a href="mailto:{{ o.email }}">{{ o.email }}</a>{% else %}—{% endif %}</td>
       </tr>
       {% endfor %}
     </tbody>

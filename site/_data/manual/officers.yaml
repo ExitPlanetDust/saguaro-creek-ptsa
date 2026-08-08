@@ -1,11 +1,18 @@
-# Executive officers (manual fallback — the officers Google Sheet wins if connected).
+# Executive officers & board (manual fallback — the officers Google Sheet wins if connected).
+# Chairs without a dedicated email fall back to no mailto link on the About page.
 items:
-  - name: President Saguaro Creek
+  - name: Katie Ventura
     title: President
     email: saguarocreekptsapresident@gmail.com
-  - name: Treasurer Saguaro Creek
-    title: Treasurer
-    email: saguarocreekptsatreasurer@gmail.com
-  - name: Secretary Saguaro Creek
+  - name: Liz Garrett
     title: Secretary
     email: saguarocreekptsasecretary@gmail.com
+  - name: Tina Crews
+    title: Treasurer
+    email: saguarocreekptsatreasurer@gmail.com
+  - name: Kerri Bradford
+    title: Fundraising Chair
+  - name: Molly Tolman
+    title: Communications Chair
+  - name: Yaritza Mejias
+    title: Website and Digital Chair
