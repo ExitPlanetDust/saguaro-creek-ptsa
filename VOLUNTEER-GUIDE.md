@@ -15,7 +15,7 @@ the site), then:
   folder, copy its link, and add a row (date + link) to the *Minutes* tab.
 - **Add or change a sponsor or officer** → edit the matching tab.
 
-The website checks Google **every night** and updates itself. Don't want to
+The website checks Google **every hour** and updates itself. Don't want to
 wait? Ask anyone with GitHub access to press one button (Actions → *Refresh
 data from Google* → Run workflow).
 

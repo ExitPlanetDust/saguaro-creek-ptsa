@@ -3,7 +3,7 @@
 The website is designed so that **nobody has to "maintain the website."**
 Volunteers keep doing what they already do — putting events on a Google
 Calendar, keeping a spreadsheet, dropping documents in Drive — and the
-website updates itself from those sources every night.
+website updates itself from those sources every hour.
 
 This guide explains the least-work setup, what happens automatically, and
 the easiest way to change every image on the site.

@@ -4,13 +4,14 @@
 # as repository variables — Settings → Secrets and variables → Actions →
 # Variables).
 #
-# 11:17 UTC = 4:17 am in Arizona (no DST). Also runnable by hand from the
+# Hourly at :17 (GitHub cron is best-effort; expect ~10-20 min drift). Runs
+# that find no changes deploy nothing. Also runnable by hand from the
 # Actions tab after editing the calendar or a sheet.
 name: Refresh data from Google
 
 on:
   schedule:
-    - cron: "17 11 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
