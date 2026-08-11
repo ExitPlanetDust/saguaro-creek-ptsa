@@ -1,0 +1,53 @@
+{
+  "source": "google-sheet",
+  "items": [
+    {
+      "setting": "schoolYear",
+      "value": "2026–2027"
+    },
+    {
+      "setting": "membershipCount",
+      "value": "78"
+    },
+    {
+      "setting": "membershipGoal",
+      "value": "100"
+    },
+    {
+      "setting": "membershipPrice",
+      "value": "$10"
+    },
+    {
+      "setting": "firstYearMembers",
+      "value": "103"
+    },
+    {
+      "setting": "firstYearFundraisers",
+      "value": "5"
+    },
+    {
+      "setting": "firstYearRaised",
+      "value": "More than $20,000"
+    },
+    {
+      "setting": "volunteerForm",
+      "value": "https://docs.google.com/forms/d/e/1FAIpQLSeHQhQzjOygf1PqGAkqqsKCuyrTCBn6c6vTIivfZqK9tSDWCg/viewform"
+    },
+    {
+      "setting": "email",
+      "value": "saguarocreekptsa@gmail.com"
+    },
+    {
+      "setting": "facebook",
+      "value": "https://www.facebook.com/profile.php?id=61577744557248"
+    },
+    {
+      "setting": "motto",
+      "value": "We are Sidewinder Strong, and We Rise Together"
+    },
+    {
+      "setting": "mission",
+      "value": "To make every child's potential a reality by engaging and empowering families and communities to advocate for all children."
+    }
+  ]
+}
