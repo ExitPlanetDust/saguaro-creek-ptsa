@@ -98,7 +98,7 @@ try {
   items.sort((a, b) => a.date.localeCompare(b.date));
   fs.writeFileSync(
     OUT,
-    JSON.stringify({ source: "google-calendar", fetchedAt: now.toISOString(), items }, null, 2) + "\n",
+    JSON.stringify({ source: "google-calendar", items }, null, 2) + "\n",
   );
   console.log(`Wrote ${items.length} events to ${path.relative(process.cwd(), OUT)}`);
 } catch (err) {

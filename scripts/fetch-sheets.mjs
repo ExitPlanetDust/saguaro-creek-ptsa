@@ -125,7 +125,7 @@ for (const [name, url] of Object.entries(SOURCES)) {
     const out = path.join(FETCHED_DIR, `${name}.json`);
     fs.writeFileSync(
       out,
-      JSON.stringify({ source: "google-sheet", fetchedAt: new Date().toISOString(), items }, null, 2) + "\n",
+      JSON.stringify({ source: "google-sheet", items }, null, 2) + "\n",
     );
     console.log(`Wrote ${items.length} ${name} rows.`);
   } catch (err) {
