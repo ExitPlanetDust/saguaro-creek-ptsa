@@ -45,6 +45,7 @@ jobs:
           SHEET_OFFICERS_CSV_URL: ${{ vars.SHEET_OFFICERS_CSV_URL }}
           SHEET_SPONSORS_CSV_URL: ${{ vars.SHEET_SPONSORS_CSV_URL }}
           SHEET_MINUTES_CSV_URL: ${{ vars.SHEET_MINUTES_CSV_URL }}
+          SHEET_SETTINGS_CSV_URL: ${{ vars.SHEET_SETTINGS_CSV_URL }}
         run: node scripts/fetch-sheets.mjs
       - name: Commit changes and trigger deploy
         env:
