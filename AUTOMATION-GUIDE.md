@@ -30,10 +30,12 @@ per month** — the only required touch is a 10-minute checklist once a year
    Format → Number → Custom date). Only `Title`/`Name` and `Date` are
    required per row — leave the rest blank when they don't apply.
 
-2. **Publish each tab as CSV**: File → Share → *Publish to web* → choose
-   the tab → choose *Comma-separated values (.csv)* → Publish → copy the URL.
-   ("Publish to web" makes a read-only copy visible to the website robot —
-   it does not let anyone edit the sheet.)
+2. **Share the spreadsheet read-only**: Share → *Anyone with the link* →
+   *Viewer*. The robot then reads each tab live at
+   `https://docs.google.com/spreadsheets/d/<SHEET_ID>/export?format=csv&gid=<TAB_GID>`
+   (the sheet id is in the sheet's URL; each tab's gid is in the URL when
+   that tab is open). Live reads mean edits reach the website robot
+   immediately — no "Publish to web" republish lag.
 
 3. **(Optional but nicest) Make a public PTSA Google Calendar** and copy
    its ICS address: calendar Settings → *Make available to public* → then

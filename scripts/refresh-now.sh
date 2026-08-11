@@ -5,9 +5,8 @@
 #
 # Usage: ./scripts/refresh-now.sh
 #
-# Note: Google republishes an edited sheet's CSV ~5 minutes after the edit.
-# If this script reports "no data changes" right after you edited a sheet,
-# wait five minutes and run it again.
+# The sheet URLs use Google's live export endpoint, so edits are visible to
+# the robot immediately — no republish lag.
 set -euo pipefail
 
 REPO="ExitPlanetDust/saguaro-creek-ptsa"
@@ -29,7 +28,6 @@ echo "→ Fetching from Google… ($(wait_for refresh-data.yml))"
 AFTER=$(gh api "repos/$REPO/commits/main" --jq .sha)
 if [[ "$AFTER" == "$BEFORE" ]]; then
   echo "✓ Refresh ran: no data changes found — site already up to date."
-  echo "  (Just edited a sheet? Google's published CSV lags ~5 min; retry then.)"
   exit 0
 fi
 
