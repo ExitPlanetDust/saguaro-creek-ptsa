@@ -3,51 +3,51 @@
   "items": [
     {
       "setting": "schoolYear",
-      "value": "2098–2099"
+      "value": "2026–2027"
     },
     {
       "setting": "membershipCount",
-      "value": "42"
+      "value": "78"
     },
     {
       "setting": "membershipGoal",
-      "value": "500"
+      "value": "100"
     },
     {
       "setting": "membershipPrice",
-      "value": "$77"
+      "value": "$10"
     },
     {
       "setting": "firstYearMembers",
-      "value": "999"
+      "value": "103"
     },
     {
       "setting": "firstYearFundraisers",
-      "value": "88"
+      "value": "5"
     },
     {
       "setting": "firstYearRaised",
-      "value": "More than $7 million"
+      "value": "More than $20,000"
     },
     {
       "setting": "volunteerForm",
-      "value": "https://example.com/volunteer-test"
+      "value": "https://docs.google.com/forms/d/e/1FAIpQLSeHQhQzjOygf1PqGAkqqsKCuyrTCBn6c6vTIivfZqK9tSDWCg/viewform"
     },
     {
       "setting": "email",
-      "value": "test-ptsa@example.com"
+      "value": "saguarocreekptsa@gmail.com"
     },
     {
       "setting": "facebook",
-      "value": "https://example.com/facebook-test"
+      "value": "https://www.facebook.com/profile.php?id=61577744557248"
     },
     {
       "setting": "motto",
-      "value": "TEST MOTTO — Sidewinders Testing 123"
+      "value": "We are Sidewinder Strong, and We Rise Together"
     },
     {
       "setting": "mission",
-      "value": "TEST MISSION — verifying sheet-driven settings end to end."
+      "value": "To make every child's potential a reality by engaging and empowering families and communities to advocate for all children."
     }
   ]
 }
