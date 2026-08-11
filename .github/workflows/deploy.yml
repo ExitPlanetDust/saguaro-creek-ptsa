@@ -21,7 +21,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # ref: main — always build the latest commit, not the SHA snapshotted at
+      # dispatch time; a refresh-triggered deploy can otherwise race the push
+      # it was meant to publish and rebuild the previous commit.
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 22
