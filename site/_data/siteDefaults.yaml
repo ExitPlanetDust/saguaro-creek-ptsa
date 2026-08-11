@@ -22,6 +22,10 @@ volunteerForm: "https://docs.google.com/forms/d/e/1FAIpQLSeHQhQzjOygf1PqGAkqqsKC
 # to disable analytics entirely.
 goatcounter: ""
 minutesFolder: https://drive.google.com/drive/folders/10X_LiQMV138FV-oU-3n5HK_HwfPZMlDz
+# "Our first year, by the numbers" stats on the About page.
+firstYearMembers: "103"
+firstYearFundraisers: "5"
+firstYearRaised: "More than $20,000"
 mission: >-
   To make every child's potential a reality by engaging and empowering
   families and communities to advocate for all children.

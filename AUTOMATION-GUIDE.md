@@ -25,6 +25,7 @@ per month** — the only required touch is a 10-minute checklist once a year
    | Officers | `Name`, `Title`, `Email` |
    | Sponsors | `Name`, `Tier`, `Located In`, `Address`, `Phone`, `Website`, `Logo` |
    | Minutes | `Date`, `Title`, `Link` |
+   | Settings | `Setting`, `Value` — one site setting per row: `schoolYear`, `membershipCount`, `membershipGoal`, `membershipPrice`, `volunteerForm`, `email`, `facebook`, `motto`, `mission`, `firstYearMembers`, `firstYearFundraisers`, `firstYearRaised` |
 
    Dates must look like `2026-10-23` (in Sheets: select the column →
    Format → Number → Custom date). Only `Title`/`Name` and `Date` are
@@ -48,7 +49,8 @@ per month** — the only required touch is a 10-minute checklist once a year
    *Variables* → add whichever you have:
 
    - `SHEET_EVENTS_CSV_URL`, `SHEET_OFFICERS_CSV_URL`,
-     `SHEET_SPONSORS_CSV_URL`, `SHEET_MINUTES_CSV_URL`
+     `SHEET_SPONSORS_CSV_URL`, `SHEET_MINUTES_CSV_URL`,
+     `SHEET_SETTINGS_CSV_URL`
    - `GCAL_ICS_URL`
 
    Rule of thumb: **a connected sheet replaces the matching file in the

@@ -9,6 +9,8 @@
 //   SHEET_OFFICERS_CSV_URL  columns: Name, Title, Email
 //   SHEET_SPONSORS_CSV_URL  columns: Name, Tier, Located In, Address, Phone, Website, Logo
 //   SHEET_MINUTES_CSV_URL   columns: Date, Title, Link
+//   SHEET_SETTINGS_CSV_URL  columns: Setting, Value (one site setting per row,
+//                           e.g. schoolYear / membershipCount — see _data/site.js)
 // Dates must be YYYY-MM-DD (in Sheets: Format → Number → Custom date).
 //
 // Unset URLs are skipped; failed fetches keep the previous JSON.
@@ -47,6 +49,9 @@ const KEY_MAP = {
   "phone": "phone",
   "website": "website",
   "logo": "logo",
+  "setting": "setting",
+  "key": "setting",
+  "value": "value",
   "image": "image",
   "flyer": "image",
   "flyer image": "image",
@@ -111,6 +116,7 @@ const SOURCES = {
   officers: process.env.SHEET_OFFICERS_CSV_URL,
   sponsors: process.env.SHEET_SPONSORS_CSV_URL,
   minutes: process.env.SHEET_MINUTES_CSV_URL,
+  settings: process.env.SHEET_SETTINGS_CSV_URL,
 };
 
 for (const [name, url] of Object.entries(SOURCES)) {

@@ -83,7 +83,7 @@ content:
     label: "Site settings"
     description: School year, contact email, links — used across the whole site.
     type: file
-    path: site/_data/site.yaml
+    path: site/_data/siteDefaults.yaml
     fields:
       - { name: name, label: Organization name, type: string }
       - { name: school, label: School name, type: string }
