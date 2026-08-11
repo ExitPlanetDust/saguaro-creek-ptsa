@@ -27,11 +27,15 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # Project sites are served from /<repo-name>/; user/org sites from /.
+      # With a custom domain (Pages "cname" setting) the site serves from /;
+      # otherwise project sites serve from /<repo-name>/ and user/org sites from /.
       - name: Set path prefix
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           REPO="${{ github.event.repository.name }}"
-          if [[ "$REPO" == *.github.io ]]; then
+          CNAME="$(gh api "repos/${{ github.repository }}/pages" --jq '.cname // empty' 2>/dev/null || true)"
+          if [[ -n "$CNAME" || "$REPO" == *.github.io ]]; then
             echo "PATH_PREFIX=/" >> "$GITHUB_ENV"
           else
             echo "PATH_PREFIX=/${REPO}/" >> "$GITHUB_ENV"
